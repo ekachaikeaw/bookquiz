@@ -1,12 +1,13 @@
 
-FROM node:16
+FROM node:18
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json tsconfig.json ./
+
 RUN npm install
 
-COPY ./src ./
+COPY /src ./src
 
 EXPOSE 3000
 
